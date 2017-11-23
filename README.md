@@ -1,12 +1,12 @@
 # ECE496
 # Commands to run:
 
-#Install StackNavigator:
+Install StackNavigator:
 1. Run following command in the project directory:
 npm install
 npm install --save react-navigation
 
-#Install react-native-map-api:
+Install react-native-map-api:
 1. Run following command in the project directory:
 npm install react-native-maps --save
 react-native link react-native-maps
