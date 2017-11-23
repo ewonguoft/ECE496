@@ -1,3 +1,4 @@
 # ECE496
+# Commands to run:
 npm install
-# npm install --save react-navigation
+npm install --save react-navigation
