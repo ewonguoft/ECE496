@@ -11,10 +11,11 @@ import {
   Text,
   View
 } from 'react-native';
-import Splash from './Splash';
+import{ StackNavigator, } from 'react-navigation';
+import Splash from './src/components/Login/Splash';
 import Login from './src/components/Login/Login'
 import Register from './src/components/Login/Register'
-import{ StackNavigator, } from 'react-navigation';
+import Map from './src/components/Map/Map'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -25,7 +26,8 @@ const instructions = Platform.select({
 const Navigation = StackNavigator({
     First: {screen: Splash},
     Second: {screen: Login},
-    Third: {screen: Register}
+    Third: {screen: Register},
+    Map: {screen: Map}
 });
 export default Navigation;
 /*export default class App extends Component<{}> {
