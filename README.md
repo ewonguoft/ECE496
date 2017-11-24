@@ -39,6 +39,15 @@ Then select 'SDK Tools' tag and look for 'Google Play Services'.
 If it is unchecked, check it and then click 'Apply' and it will be installed.
 ```
 
+Download and install MongoDB:
+```
+https://www.mongodb.com/download-center#community
+```
+
+How to setup MongoDB:
+```
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+```
 
 ## Running the tests
 
