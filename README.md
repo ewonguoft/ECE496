@@ -49,6 +49,19 @@ How to setup MongoDB:
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 ```
 
+In server directory run the following commands:
+```
+npm install express body-parser ejs --save
+```
+
+```
+npm install mongojs --save
+```
+
+```
+npm install nodemon -g
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
