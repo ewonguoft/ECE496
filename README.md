@@ -34,7 +34,7 @@ react-native link react-native-maps
 Ensure that you have Google Play Services installed:
 
 ```
-You can check it by openning your Android Studio->Tools->Android->ADK Manager
+You can check it by openning your Android Studio->Tools->Android->SDK Manager
 Then select 'SDK Tools' tag and look for 'Google Play Services'.
 If it is unchecked, check it and then click 'Apply' and it will be installed.
 ```
