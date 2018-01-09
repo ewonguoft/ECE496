@@ -16,7 +16,7 @@ import Splash from './src/components/Login/Splash';
 import Login from './src/components/Login/Login'
 import Register from './src/components/Login/Register'
 import Map from './src/components/Map/Map'
-
+import Settings from './src/components/Settings/Settings'
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -27,7 +27,8 @@ const Navigation = StackNavigator({
     First: {screen: Splash},
     Second: {screen: Login},
     Third: {screen: Register},
-    Map: {screen: Map}
+    Map: {screen: Map},
+    Settings: {screen: Settings}
 });
 export default Navigation;
 /*export default class App extends Component<{}> {

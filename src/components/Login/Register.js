@@ -9,7 +9,7 @@ export default class Register extends Component {
     render(){
         return(
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
-                    <TextInput
+                <TextInput
                     placeholder="Username"
                     placeholderTextColor="rgba(255,255,255,0.7)"
                     returnKeyType="next"

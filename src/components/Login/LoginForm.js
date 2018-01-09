@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native';
-
+import firebase from 'firebase';
+import Settings from '../Settings/Settings';
 export default class LoginForm extends Component {
+
+    state = {email: '', password: '', error: ''};
+
+    onLoginPress() {
+        const { email, password } = this.state;
+
+        this.setState({ error: ''});
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then( ()=>navigate("Settings", {}) )
+            .catch( () => {
+                this.setError.bind(this);
+        });
+
+    }
+
+    setError() {
+        this.setState({ error: 'hi im stuck'});
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -9,8 +30,14 @@ export default class LoginForm extends Component {
                     barStyle="light-content"
                 />
 
+                <Text style={styles.errorTextStyle}>
+                
+                    {this.state.error}
+                    
+                </Text>
+
                 <TextInput
-                    placeholder="Username"
+                    placeholder="Email"
                     placeholderTextColor="rgba(255,255,255,0.7)"
                     returnKeyType="next"
                     onSubmitEditing={() => this.passwordInput.focus()}
@@ -18,6 +45,7 @@ export default class LoginForm extends Component {
                     autoCapatalize="none"
                     autoCorrect={false}
                     style={styles.input}
+                    onChangeText={email => this.setState({ email })}
                  />
 
                 <TextInput
@@ -26,6 +54,7 @@ export default class LoginForm extends Component {
                     secureTextEntry
                     style={styles.input}
                     ref={(input) => this.passwordInput = input}
+                    onChangeText={password => this.setState({ password })}
                  />
 
                  <TouchableOpacity style={styles.buttonContainer}>
@@ -55,5 +84,13 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color: '#FFFFFF',
         fontWeight: '700'
-    }
+    },
+    errorTextStyle: {
+        fontSize: 20,
+        alignSelf: 'center',
+        color: 'red',
+        height: 20,
+        width: 50,
+        padding: -10
+      }
 });

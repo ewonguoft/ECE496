@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import firebase from 'firebase';
 const util = require('util')
 
 export default class Splash extends Component<{}> {
@@ -7,6 +8,16 @@ export default class Splash extends Component<{}> {
         title: 'Splash'
     }
 
+    componentWillMount() {
+        firebase.initializeApp({
+            apiKey: "AIzaSyA7gd1d6FL0rLVC5Ttb2rfNXSsnxcRab2I",
+            authDomain: "chat-map-f390a.firebaseapp.com",
+            databaseURL: "https://chat-map-f390a.firebaseio.com",
+            projectId: "chat-map-f390a",
+            storageBucket: "chat-map-f390a.appspot.com",
+            messagingSenderId: "340017396713"
+        });
+    }
     render() {
         console.log("this.props.navigation = " + util.inspect(this.props.navigation, false, null))
         var{navigate} = this.props.navigation;
