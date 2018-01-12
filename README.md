@@ -62,6 +62,17 @@ npm install mongojs --save
 npm install nodemon -g
 ```
 
+Install firebase:
+```
+Under the root directory of the app, run:
+npm install --save firebase
+```
+
+To use firebase dependency in your code:
+```
+import firebase from 'firebase'
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
