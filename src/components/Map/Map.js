@@ -99,7 +99,7 @@ export default class Map extends Component {
             onRegionChange={ region => this.setState({region}) }
             onRegionChangeComplete={ region => this.setState({region}) }
             >
-            
+
             <MapView.Marker
                 coordinate={ this.state.region }
             />
@@ -129,7 +129,21 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     addressInput: {
-        padding: 10, 
+        padding: 10,
         backgroundColor: 'white'
+    },
+    containerStyle: {
+      borderWidth: 1,
+      borderRadius: 2,
+      borderColor: '#ddd',
+      borderBottomWidth: 0,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 2,
+      elevation: 1,
+      marginLeft: 5,
+      marginRight: 5,
+      marginTop: 10
     },
 });
