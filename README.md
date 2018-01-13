@@ -73,6 +73,12 @@ To use firebase dependency in your code:
 import firebase from 'firebase'
 ```
 
+Install Redux and React-Redux:
+```
+Under the root directory of the app, run:
+npm install --save redux react-redux
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
