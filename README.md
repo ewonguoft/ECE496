@@ -78,6 +78,7 @@ Install Redux and React-Redux:
 Under the root directory of the app, run:
 npm install --save redux react-redux
 npm install --save redux-thunk
+npm install --save react-native-router-flux
 ```
 
 ## Running the tests
