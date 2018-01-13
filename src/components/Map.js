@@ -9,6 +9,7 @@ import {
   TextInput
 } from 'react-native';
 import MapView from 'react-native-maps';
+import { SearchBar, Button } from './common'
 
 // export default class Test extends Component<{}> {
 //   constructor(){
@@ -39,12 +40,13 @@ export default class Map extends Component {
     constructor() {
         super();
         this.state = {
-        region: {
-            latitude: LATITUDE,
-            longitude: LONGITUDE,
-            latitudeDelta: LATITUDE_DELTA,
-            longitudeDelta: LONGITUDE_DELTA,
-        }
+          region: {
+              latitude: LATITUDE,
+              longitude: LONGITUDE,
+              latitudeDelta: LATITUDE_DELTA,
+              longitudeDelta: LONGITUDE_DELTA,
+          },
+          text: ''
         };
     }
 
@@ -85,33 +87,26 @@ export default class Map extends Component {
         return (
         <View style={styles.container}>
             <View style={styles.addressInput}>
-            <TextInput
-                style={{height: 40}}
-                placeholder="Type input"
-                onChangeText={(text) => this.setState({text})}
-            />
+              <SearchBar
+                  placeholder="Search here"
+                  value={this.state.text}
+                  onChangeText={text => this.setState({ text })}
+              />
             </View>
+
+            // <Button onPress={() => {}} />
 
             <MapView
-            style={ styles.map }
-            showsUserLocation={ true }
-            region={ this.state.region }
-            onRegionChange={ region => this.setState({region}) }
-            onRegionChangeComplete={ region => this.setState({region}) }
+              style={styles.map}
+              showsUserLocation={true}
+              region={this.state.region}
+              onRegionChange={region => this.setState({ region })}
+              onRegionChangeComplete={region => this.setState({ region })}
             >
-
-            <MapView.Marker
-                coordinate={ this.state.region }
-            />
+              <MapView.Marker
+                  coordinate={this.state.region}
+              />
             </MapView>
-
-            <View style={{padding: 10, backgroundColor: 'white'}}>
-            <TextInput
-                style={{height: 40}}
-                placeholder="Type input"
-                onChangeText={(text) => this.setState({text})}
-            />
-            </View>
         </View>
         );
     }
@@ -119,7 +114,7 @@ export default class Map extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         // justifyContent: 'center',
         // alignItems: 'center',
         // backgroundColor: '#F5FCFF',
@@ -130,7 +125,7 @@ const styles = StyleSheet.create({
     },
     addressInput: {
         padding: 10,
-        backgroundColor: 'white'
+        // backgroundColor: 'white'
     },
     containerStyle: {
       borderWidth: 1,
