@@ -24,6 +24,9 @@ export default class Splash extends Component<{}> {
                     <TouchableOpacity onPress = { ()=>navigate("Map", {}) }>
                         <Text style={styles.button2}>My map</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity onPress = { ()=>navigate("Chat", {}) }>
+                        <Text style={styles.button2}>Chatroom</Text>
+                    </TouchableOpacity>
                     <View>
                         <Text style={styles.subtitle}>Powered by React Native</Text>
                     </View>
